@@ -48,8 +48,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   TextField(controller: taskTitleController),
                   CheckboxListTile(
                     value: completedStatus,
-                    onChanged: (checked) => setState(() {
-                      completedStatus = checked;
+                    onChanged: (bool? checked) => setState(() {
+                      completedStatus = checked ?? false;
                     }),
                     title: Text('Complete?'),
                   ),

@@ -18,8 +18,8 @@ class TaskProvider extends ChangeNotifier {
       UnmodifiableListView(_tasks.where((todo) => todo.completed));
 
   void addTodo(Task task) async {
-    final response = await http.post(
-      "http://10.0.2.2:8000/todo",
+    var url = Uri.parse("http://localhost:8000/todo");
+    final response = await http.post(url,
       headers: {"Content-Type": "application/json"},
       body: json.encode(task),
     );
@@ -33,8 +33,9 @@ class TaskProvider extends ChangeNotifier {
   void toggleTodo(Task task) async {
     final taskIndex = _tasks.indexOf(task);
     _tasks[taskIndex].toggleCompleted();
+    var url = Uri.parse("http://localhost:8000/todo/${task.id}");
     final response = await http.patch(
-      "http://10.0.2.2:8000/todo/${task.id}",
+      url,
       headers: {"Content-Type": "application/json"},
       body: json.encode(task),
     );
@@ -46,8 +47,8 @@ class TaskProvider extends ChangeNotifier {
   }
 
   void deleteTodo(Task task) async{
-    final response = await http.delete(
-      "http://10.0.2.2:8000/todo/${task.id}",
+    var url = Uri.parse("http://localhost:8000/todo/${task.id}");
+    final response = await http.delete(url
     );
     if (response.statusCode == 204) {
       _tasks.remove(task);
@@ -56,7 +57,8 @@ class TaskProvider extends ChangeNotifier {
   }
 
   fetchTaks() async {
-    final response = await http.get("http://10.0.2.2:8000/todo");
+    var url = Uri.parse("http://localhost:8000/todo/");
+    final response = await http.get(url);
     if (response.statusCode == 200) {
       var data = json.decode(response.body) as List;
       _tasks = data.map<Task>((json) => Task.fromJason(json)).toList();

@@ -5,7 +5,7 @@ import 'package:todo/widgets/task_list_item.dart';
 class TaskList extends StatelessWidget {
   final List<Task> tasks;
 
-  TaskList({@required this.tasks});
+  TaskList({required this.tasks});
 
   @override
   Widget build(BuildContext context) {

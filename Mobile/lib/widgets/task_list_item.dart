@@ -6,14 +6,14 @@ import 'package:todo/providers/task_provider.dart';
 class TaskListItem extends StatelessWidget {
   final Task task;
 
-  TaskListItem({@required this.task});
+  TaskListItem({required this.task});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: Checkbox(
         value: task.completed,
-        onChanged: (bool checked) {
+        onChanged: (bool? checked) {
           Provider.of<TaskProvider>(context, listen: false).toggleTodo(task);
         },
       ),
