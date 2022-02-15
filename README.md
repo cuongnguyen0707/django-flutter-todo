@@ -1,8 +1,14 @@
 # Todo Application
+# flutter version: 
+- Flutter 2.10.1 • channel stable • https://github.com/flutter/flutter.git
+- Framework • revision db747aa133 (5 days ago) • 2022-02-09 13:57:35 -0600
+- Engine • revision ab46186b24
+- Tools • Dart 2.16.1 • DevTools 2.9.2
 *Flutter + Provider + django + django REST Framework*
+
 ## About
 Todo application made with:
- - [Flutter](https://flutter.dev/) (Flutter is an open-source UI software development kit created by Google)
+ - [Flutter](https://flutter.dev/ https://docs.flutter.dev/ ) (Flutter is an open-source UI software development kit created by Google)
  - [Provider](https://pub.dev/packages/provider) (State-management library for Flutter)
  - [django](https://www.djangoproject.com/) (Back-end REST API using [django REST framework](https://www.django-rest-framework.org/))
 
