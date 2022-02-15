@@ -12,7 +12,7 @@ class Task {
     completed = !completed;
   }
 
-  factory Task.fromJason(Map<String, dynamic> json) {
+  factory Task.fromJson(Map<String, dynamic> json) {
     return Task(
       id: json['id'],
       title: json['title'],

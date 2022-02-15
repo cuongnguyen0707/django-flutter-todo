@@ -57,11 +57,11 @@ class TaskProvider extends ChangeNotifier {
   }
 
   fetchTaks() async {
-    var url = Uri.parse("http://localhost:8000/todo/");
+    var url = Uri.parse("http://localhost:8000/todo");
     final response = await http.get(url);
     if (response.statusCode == 200) {
       var data = json.decode(response.body) as List;
-      _tasks = data.map<Task>((json) => Task.fromJason(json)).toList();
+      _tasks = data.map<Task>((json) => Task.fromJson(json)).toList();
       notifyListeners();
     }
   }
