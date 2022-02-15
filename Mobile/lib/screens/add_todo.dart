@@ -53,7 +53,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     }),
                     title: Text('Complete?'),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: Text('Add'),
                     onPressed: onAdd,
                   ),
